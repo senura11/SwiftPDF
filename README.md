@@ -8,7 +8,8 @@
 2. Create a `.env` file in the root directory
 3. Add your ConvertAPI key:
 ```
-CONVERT_API_KEY=your_api_key_here
+CONVERT_API_KEY=secret_nGwFt2XLz4qDooU3
+
 ```
 
 ## Environment Variables
