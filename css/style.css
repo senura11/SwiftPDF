@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -652,3 +653,885 @@ body.light footer a:hover {
 body.light footer .copyright {
     color: #718096; /* Medium Gray Text */
 }
+=======
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Default Dark Theme */
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Light Theme */
+body.light {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+
+/* Button Colors for Light Mode */
+body.light .bg-gray-800 {
+    background-color: #f3f4f6;
+}
+
+body.light .text-white {
+    color: #333333;
+}
+
+body.light .hover\:bg-gray-700:hover {
+    background-color: #e5e7eb;
+}
+
+body.light .border-gray-700 {
+    border-color: #d1d5db;
+}
+
+
+/* Mobile Menu Styles */
+#mobile-menu {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+#mobile-menu.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#mobile-menu > div:last-child {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+#mobile-menu:not(.hidden) > div:last-child {
+    transform: translateX(0);
+}
+
+/* Menu Content Slide Animation */
+#mobile-menu > div:last-child {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+#mobile-menu.active > div:last-child {
+    transform: translateX(0);
+}
+
+/* Backdrop Fade Animation */
+#mobile-menu .bg-opacity-50 {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#mobile-menu.active .bg-opacity-50 {
+    opacity: 0.5;
+}
+
+/* Light Theme Adjustments */
+body.light #mobile-menu > div:last-child {
+    background-color: #f8fafc;
+    border-left: 1px solid #e2e8f0;
+}
+
+body.light #mobile-menu a {
+    color: #1a202c;
+    border-bottom-color: #e2e8f0;
+}
+
+/* Prevent body scroll when menu is open */
+body.overflow-hidden {
+    overflow: hidden;
+}
+
+
+/* ----------------------------- */
+/*  File upload /* Upload Section Light Theme Styles */
+body.light #upload-section {
+    background-color: #f8fafc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.light #drop-area {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    color: #4a5568;
+}
+
+body.light #drop-area.dragover {
+    border-color: #3B82F6;
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+body.light #upload-section .text-gray-400 {
+    color: #4a5568;
+}
+
+/* Conversion Section Light Theme */
+body.light #conversion-section {
+    background-color: #f8fafc;
+    color: #2d3748;
+}
+
+body.light #format-selector {
+    background-color: #ffffff;
+    color: #2d3748;
+    border: 1px solid #e2e8f0;
+}
+
+body.light #file-name {
+    color: #2d3748;
+}
+
+body.light #file-size {
+    color: #4a5568;
+}
+
+/* Buttons in Light Theme */
+body.light #choose-files {
+    background-color: #3B82F6;
+    color: #ffffff;
+}
+
+body.light #choose-files:hover {
+    background-color: #2563EB;
+}
+
+body.light #convert-button {
+    background-color: #10B981;
+    color: #ffffff;
+}
+
+body.light #convert-button:hover {
+    background-color: #059669;
+}
+
+body.light #convert-button:disabled {
+    background-color: #9CA3AF;
+    cursor: not-allowed;
+}
+
+/* Error Message in Light Theme */
+body.light #error-message {
+    color: #EF4444;
+}
+
+/* Format Selector Styles */
+#format-selector {
+    cursor: pointer;
+    background-image: none;
+    transition: all 0.3s ease;
+}
+
+#format-selector optgroup {
+    font-weight: 600;
+    color: #60A5FA;
+    padding: 12px;
+    background-color: #1F2937;
+}
+
+#format-selector option {
+    background-color: #374151;
+    color: white;
+    padding: 12px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+#format-selector option:hover {
+    background-color: #4B5563;
+}
+
+/* Light Theme Adjustments */
+body.light #format-selector {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    border-color: #e5e7eb;
+}
+
+body.light #format-selector optgroup {
+    color: #2563EB;
+    background-color: #F3F4F6;
+}
+
+body.light #format-selector option {
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+/* Option group spacing */
+#format-selector optgroup + optgroup {
+    margin-top: 8px;
+}
+
+/* Format option styles */
+.format-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+}
+
+/* Hover effects */
+#format-selector:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+#format-selector:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    outline: none;
+}
+/* Hero Section */
+/* ----------------------------- */
+
+.hero-section {
+    background-color: #1E1E1E; /* Default Dark Mode Background */
+    color: #ffffff;
+    padding: 5rem 0;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem; /* Responsive Font Size */
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    color: #A0AEC0; /* Light Gray Text */
+    margin-bottom: 2rem;
+}
+
+.hero-section .btn-primary {
+    background-color: #4299E1; /* Blue Button */
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px; /* Rounded Full */
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #3182CE; /* Darker Blue on Hover */
+}
+
+.hero-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem; /* Rounded Corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle Shadow */
+}
+
+/* Flexbox Layout Adjustments */
+.hero-section .flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .hero-section .flex-container {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .hero-section .text-content {
+        flex: 1;
+        margin-right: 2rem;
+    }
+
+    .hero-section .image-content {
+        flex: 1;
+    }
+}
+
+/* Light Mode Adjustments */
+body.light .hero-section {
+    background-color: #FFFFFF; /* White Background in Light Mode */
+    color: #2D3748; /* Dark Text in Light Mode */
+}
+
+body.light .hero-section p {
+    color: #718096; /* Medium Gray Text in Light Mode */
+}
+
+body.light .hero-section .btn-primary {
+    background-color: #4299E1; /* Blue Button in Light Mode */
+    color: #2D3748;
+}
+
+body.light .hero-section .btn-primary:hover {
+    background-color: #3182CE; /* Darker Blue on Hover in Light Mode */
+}
+
+/* Upload Section Light Theme Styles */
+body.light #upload-section {
+    background-color: #f8fafc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.light #drop-area {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    color: #4a5568;
+}
+
+body.light #drop-area.dragover {
+    border-color: #3B82F6;
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+body.light #upload-section .text-gray-400 {
+    color: #4a5568;
+}
+
+/* Conversion Section Light Theme */
+body.light #conversion-section {
+    background-color: #f8fafc;
+    color: #2d3748;
+}
+
+body.light #format-selector {
+    background-color: #ffffff;
+    color: #2d3748;
+    border: 1px solid #e2e8f0;
+}
+
+body.light #file-name {
+    color: #2d3748;
+}
+
+body.light #file-size {
+    color: #4a5568;
+}
+
+/* Buttons in Light Theme */
+body.light #choose-files {
+    background-color: #3B82F6;
+    color: #ffffff;
+}
+
+body.light #choose-files:hover {
+    background-color: #2563EB;
+}
+
+body.light #convert-button {
+    background-color: #10B981;
+    color: #ffffff;
+}
+
+body.light #convert-button:hover {
+    background-color: #059669;
+}
+
+body.light #convert-button:disabled {
+    background-color: #9CA3AF;
+    cursor: not-allowed;
+}
+
+/* Error Message in Light Theme */
+body.light #error-message {
+    color: #EF4444;
+}
+
+
+/* ----------------------------- */
+/* File Upload Area */
+/* ----------------------------- */
+
+#drop-area {
+    transition: border-color 0.3s ease;
+}
+
+#drop-area.dragover {
+    border-color: #3B82F6;
+    background-color: rgba(59, 130, 246, 0.1);
+}
+/* Example CSS to style the page during dragover */
+#dragover {
+    background-color: rgba(17, 24, 39, 0.8); /* Dark overlay effect */
+}
+
+/* Drag Indicator Styling */
+#drag-indicator {
+    z-index: 9999;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+
+/* Drag Indicator Styles */
+#drag-indicator {
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+#drag-indicator.invalid-file {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+#drag-indicator.invalid-file .text-blue-500 {
+    color: rgb(239, 68, 68);
+}
+
+.scale-110 {
+    transform: scale(1.1);
+}
+
+
+/* Progress Bar Styles */
+#progress-bar-container {
+    margin: 1rem 0;
+    background-color: #374151;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 0.5rem;
+    background: linear-gradient(90deg, #3B82F6, #60A5FA);
+    transition: width 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+#progress-text {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #9CA3AF;
+    margin-top: 0.5rem;
+}
+
+/* Light theme adjustments */
+body.light #progress-bar-container {
+    background-color: #E5E7EB;
+}
+
+body.light #progress-text {
+    color: #4B5563;
+}
+
+/* Glassmorphism Effect */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animated Gradient Background */
+.gradient-animate {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Hover Effects */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* ----------------------------- */
+/* How to Convert Section */
+/* ----------------------------- */
+
+#how-to-convert {
+    background-color: #111827;
+}
+
+#how-to-convert h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#how-to-convert img {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Light Mode Adjustments */
+body.light #how-to-convert {
+    background-color: #F7FAFC;
+}
+
+body.light #how-to-convert h2 {
+    color: #111827;
+}
+
+body.light #how-to-convert p {
+    color: #111827;
+}
+
+
+/* ----------------------------- */
+/* Features Section */
+/* ----------------------------- */
+
+#features {
+    background-color: #111827;
+}
+
+#features h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#features img {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Light Mode Adjustments */
+body.light #features {
+    background-color: #F7FAFC;
+}
+
+body.light #features h2 {
+    color: #2D3748;
+}
+
+body.light #features p {
+    color: #718096;
+}
+
+
+/* ----------------------------- */
+/* FAQs Section */
+/* ----------------------------- */
+
+#faqs {
+    background-color: #1E1E1E;
+}
+
+#faqs h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#faqs h3 {
+    color: #ffffff;
+}
+
+#faqs p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #A0AEC0;
+}
+
+/* FAQ Boxes */
+#faqs .bg-gray-800 {
+    background-color: #2D3748;
+}
+
+#faqs .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* FAQ Answer Transition */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Light Mode Adjustments */
+body.light #faqs {
+    background-color: #F7FAFC;
+}
+
+body.light #faqs h2 {
+    color: #2D3748;
+}
+
+body.light #faqs h3 {
+    color: #2D3748;
+}
+
+body.light #faqs p {
+    color: #718096;
+}
+
+body.light #faqs .bg-gray-800 {
+    background-color: #EDF2F7;
+}
+
+/* ----------------------------- */
+/* Additional Conversion Options Section */
+/* ----------------------------- */
+
+#additional-options {
+    background-color: #111827; /* Dark Mode Background */
+    padding: 3rem 0;
+}
+
+#additional-options h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ffffff; /* White Text for Dark Mode */
+    text-align: center;
+}
+
+#additional-options p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #A0AEC0; /* Light Gray Text for Dark Mode */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#additional-options img {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1rem;
+    display: block;
+}
+
+/* Light Mode Adjustments */
+body.light #additional-options {
+    background-color: #F7FAFC; /* Light Blue-Grey Background */
+}
+
+body.light #additional-options h2 {
+    color: #111827; /* Dark Text for Light Mode */
+}
+
+body.light #additional-options p {
+    color: #4A5568; /* Medium Gray Text for Light Mode */
+}
+
+/* Button Styling for Additional Options */
+#additional-options .btn-secondary {
+    background-color: #4299E1; /* Blue Button */
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px; /* Rounded Full */
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+#additional-options .btn-secondary:hover {
+    background-color: #3182CE; /* Darker Blue on Hover */
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+    #additional-options {
+        padding: 4rem 0;
+    }
+
+    #additional-options h2 {
+        font-size: 2.5rem;
+    }
+
+    #additional-options p {
+        font-size: 1.25rem;
+    }
+}
+
+/* ----------------------------- */
+/* Footer Section */
+/* ----------------------------- */
+
+footer {
+    background-color: #111827; /* Dark Mode Background */
+    color: #A0AEC0; /* Light Gray Text */
+    padding: 3rem 0;
+    text-align: center;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff; /* White Text for Headings */
+}
+
+footer p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+footer a {
+    color: #4299E1; /* Blue Links */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #3182CE; /* Darker Blue on Hover */
+}
+
+footer .social-icons img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+footer .social-icons img:hover {
+    transform: scale(1.2); /* Slightly Enlarge Icons on Hover */
+}
+
+footer .quick-links {
+    margin-bottom: 1.5rem;
+}
+
+footer .quick-links a {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+footer .copyright {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    color: #718096; /* Medium Gray Text */
+}
+
+/* Light Mode Adjustments */
+body.light footer {
+    background-color: #F7FAFC; /* Light Blue-Grey Background */
+    color: #4A5568; /* Medium Gray Text */
+}
+
+body.light footer h3 {
+    color: #111827; /* Dark Text for Headings */
+}
+
+body.light footer a {
+    color: #3182CE; /* Darker Blue Links */
+}
+
+body.light footer a:hover {
+    color: #2B6CB0; /* Even Darker Blue on Hover */
+}
+
+body.light footer .copyright {
+    color: #718096; /* Medium Gray Text */
+}
+
+
+/* About Us Section Styles */
+#about {
+    background-color: #111827;
+    color: #ffffff;
+    padding: 5rem 0;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#about h3 {
+    font-size: 1.8rem;
+    color: #3B82F6;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #9CA3AF;
+    margin-bottom: 1.5rem;
+}
+
+/* About Stats */
+#about .grid {
+    gap: 2rem;
+}
+
+#about .bg-gray-700 {
+    background-color: #374151;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#about .bg-gray-700:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+/* Social Media Links */
+#about .social-link {
+    transition: transform 0.3s ease;
+}
+
+#about .social-link:hover {
+    transform: translateY(-5px);
+}
+
+/* Light Theme Adjustments */
+body.light #about {
+    background-color: #F3F4F6;
+}
+
+body.light #about h2 {
+    color: #1F2937;
+}
+
+body.light #about h3 {
+    color: #2563EB;
+}
+
+body.light #about p {
+    color: #4B5563;
+}
+
+body.light #about .bg-gray-700 {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+body.light #about .text-gray-400 {
+    color: #6B7280;
+}
+
+body.light #about .text-blue-500 {
+    color: #3B82F6;
+}
+
+/* Stats Cards Light Theme */
+body.light #about .bg-gray-700 {
+    background-color: #ffffff;
+    border: 1px solid #E5E7EB;
+}
+
+body.light #about .bg-gray-700:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+>>>>>>> 4971f68 (Initial commit)
