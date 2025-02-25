@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // Light/Dark Mode Toggle
 const themeToggle = document.getElementById('theme-toggle');
 
@@ -465,4 +465,4 @@ function toggleAnswer(element) {
     }
 }
 
->>>>>>> 4971f68 (Initial commit)
+
