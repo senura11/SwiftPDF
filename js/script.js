@@ -74,6 +74,30 @@ document.addEventListener('DOMContentLoaded', function() {
         audio.volume = 0.2;
         audio.play();
     });
+
+    // Add staggered animation delay to options
+    formatSelector.querySelectorAll('option').forEach((option, index) => {
+        option.style.animationDelay = `${index * 50}ms`;
+    });
+
+    // Add hover effect
+    formatSelector.addEventListener('mouseover', (e) => {
+        if (e.target.tagName === 'OPTION') {
+            e.target.style.transform = 'translateX(10px)';
+        }
+    });
+
+    formatSelector.addEventListener('mouseout', (e) => {
+        if (e.target.tagName === 'OPTION') {
+            e.target.style.transform = 'translateX(0)';
+        }
+    });
+
+    // Add selection animation
+    formatSelector.addEventListener('change', function() {
+        this.classList.add('pulse');
+        setTimeout(() => this.classList.remove('pulse'), 300);
+    });
 });
 
 const fileInput = document.getElementById('file-input');
