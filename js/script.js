@@ -284,5 +284,3 @@ function toggleAnswer(element) {
         arrow.style.transform = "rotate(0deg)";
     }
 }
-
->>>>>>> 4971f68 (Initial commit)
