@@ -169,47 +169,72 @@
         <!-- Conversion Section -->
         <div id="conversion-section" class="max-w-lg mx-auto bg-gray-800 p-8 rounded-lg shadow-lg text-center hidden">
             <!-- Uploaded File Details -->
-            <div id="uploaded-file-details" class="mb-6">
-                <p class="text-gray-400">Uploaded File:</p>
-                <p id="file-name" class="text-white font-semibold"></p>
-                <p id="file-size" class="text-gray-400"></p>
+            <div id="uploaded-file-details" class="mb-6 bg-gray-700 rounded-lg p-4 shadow-lg">
+                <div class="flex justify-between items-center">
+                    <!-- File Info Section -->
+                    <div class="flex items-center space-x-4">
+                        <!-- PDF Icon -->
+                        <div class="bg-gray-600 p-3 rounded-lg">
+                            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                    d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- File Details -->
+                        <div>
+                            <p id="file-name" class="text-lg font-semibold text-white truncate max-w-xs"></p>
+                            <div class="flex items-center space-x-2 mt-1">
+                                <span id="file-size" class="text-sm text-gray-400"></span>
+                                <span class="text-gray-400">•</span>
+                                <span class="text-sm text-gray-400">PDF Document</span>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Remove Button -->
+                    <button id="remove-file" class="p-2 hover:bg-gray-600 rounded-full transition-all duration-300 group">
+                        <svg class="w-6 h-6 text-gray-400 group-hover:text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             <!-- Format Selection Dropdown -->
-            <div class="relative mb-6">
-                <label for="format-selector" class="block text-sm font-medium text-gray-400 mb-2">Select Output Format</label>
-                <select id="format-selector" class="w-full p-3 pl-10 pr-10 rounded-lg bg-gray-700 text-white border border-gray-600 
-                appearance-none hover:border-blue-500 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <!-- Image Formats -->
-                    <optgroup label="Image Formats" class="bg-gray-800 font-semibold">
-                        <option value="PNG" class="format-option">PNG - High Quality Images</option>
-                        <option value="SVG" class="format-option">SVG - Scalable Graphics</option>
-                        <option value="WEBP" class="format-option">WebP - Web Optimized</option>
-                        <option value="TIFF" class="format-option">TIFF - Print Quality</option>
-                        <option value="Gif" class="format-option">Gif - Gif format</option>
-                        <option value="Jpg" class="format-option">Jpg - Jpg format </option>
-                    </optgroup>
+            <div class="relative mb-6 group">
+    <label for="format-selector" class="block text-sm font-medium text-gray-400 mb-2 transition-all duration-300 group-hover:text-blue-500">
+        Select Output Format
+    </label>
+    <select id="format-selector" class="format-selector w-full p-3 pl-10 pr-10 rounded-lg bg-gray-700 text-white border border-gray-600 
+    appearance-none hover:border-blue-500 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <!-- Document Formats -->
+        <optgroup label="📄 Document Formats" class="format-group">
+            <option value="DOCX" class="format-option">DOCX - Microsoft Word</option>
+            <option value="DOC" class="format-option">DOC - Word Legacy</option>
+            <option value="RTF" class="format-option">RTF - Rich Text Format</option>
+            <option value="ODT" class="format-option">ODT - OpenDocument</option>
+            <option value="TXT" class="format-option">TXT - Plain Text</option>
+        </optgroup>
 
-                    <!-- Document Formats -->
-                    <optgroup label="Document Formats" class="bg-gray-800 font-semibold mt-2">
-                        <option value="TXT" class="format-option">TXT - Plain Text</option>
-                        <option value="DOCX" class="format-option">DOCX - Microsoft Word</option>
-                        <option value="EXCEL" class="format-option">EXCEL - Microsoft Excel</option>
-                        <option value="HTML" class="format-option">HTML - Web Page</option>
-                        <option value="PPTX" class="format-option">PPTX - PowerPoint</option>
-                        <option value="XLSX" class="format-option">XLSX - Excel Spreadsheet</option>
-                        <option value="CSV" class="format-option">CSV - Comma Separated Values</option>
-                        
-                    </optgroup>
-                </select>
-                
-                <!-- Dropdown Arrow -->
-                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none mt-7">
-                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </div>
-            </div>
+        <!-- Spreadsheet Formats -->
+        <optgroup label="📊 Spreadsheet Formats" class="format-group">
+            <option value="XLSX" class="format-option">XLSX - Microsoft Excel</option>
+            <option value="XLS" class="format-option">XLS - Excel Legacy</option>
+            <option value="csv" class="format-option">CSV - Comma Separated</option>
+            <option value="ODS" class="format-option">ODS - OpenDocument Sheet</option>
+        </optgroup>
+
+        <!-- Image Formats -->
+        <optgroup label="🖼️ Image Formats" class="format-group">
+            <option value="PNG" class="format-option">PNG - High Quality</option>
+            <option value="JPG" class="format-option">JPG - Compressed</option>
+            <option value="WEBP" class="format-option">WEBP - Web Optimized</option>
+            <option value="SVG" class="format-option">SVG - Vector Graphics</option>
+        </optgroup>
+    </select>
+</div>
 
             <!-- Convert Button -->
             <button id="convert-button" class="px-6 py-3 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition duration-300 disabled:bg-gray-500 disabled:cursor-not-allowed" disabled>
@@ -222,6 +247,33 @@
                 <p id="progress-text" class="text-gray-400 mt-2 text-sm">Progress: 0%</p>
             </div>
 
+            <!-- Add this inside the conversion-section div, before the download button -->
+<div id="error-container" class="hidden mt-6 bg-red-500/10 border border-red-500/20 rounded-lg p-4 transition-all duration-300">
+    <div class="flex items-center">
+        <!-- Error Icon -->
+        <div class="flex-shrink-0">
+            <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        <!-- Error Message -->
+        <div class="ml-3">
+            <h3 class="text-sm font-medium text-red-500">Conversion Failed</h3>
+            <div class="mt-1">
+                <p id="error-message-text" class="text-sm text-red-500"></p>
+            </div>
+        </div>
+        <!-- Close Button -->
+        <div class="ml-auto pl-3">
+            <button id="error-close" class="inline-flex text-red-500 hover:text-red-600 focus:outline-none">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
             <!-- Download Button -->
             <button id="download-button" class="mt-6 px-6 py-3 bg-purple-500 text-white font-semibold rounded-full hover:bg-purple-600 transition duration-300 hidden">
                 Download
@@ -232,104 +284,284 @@
 
 <!-- How to Convert PDF to TEXT Section -->
 <section id="how-to-convert" class="py-20 bg-gray-900 text-white">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8">How to Convert PDF to TEXT?</h2>
-        <div class="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 hover:text-blue-500 transition-colors duration-300">
+            How to Convert PDF to TEXT?
+        </h2>
+        
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12">
             <!-- Step 1 -->
-            <div class="flex flex-col items-center">
-                <img src="images/choose-file-icon.png" alt="Choose Files" class="w-12 h-12 mb-2">
-                <p class="text-lg">1. Click the <strong>Choose Files</strong> button to upload PDF files.</p>
+            <div class="step-card hover:transform hover:scale-105 transition-all duration-500 bg-gray-800 p-8 rounded-xl shadow-lg">
+                <div class="icon-wrapper mb-6 transform hover:rotate-12 transition-transform duration-300">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-blue-500 rounded-full opacity-20 animate-pulse"></div>
+                        <img src="images/choose-file-icon.png" alt="Choose Files" class="w-16 h-16 relative z-10">
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-blue-400">Step 1</h3>
+                <p class="text-gray-300">Click the <strong class="text-blue-400">Choose Files</strong> button to upload PDF files.</p>
             </div>
+
             <!-- Step 2 -->
-            <div class="flex flex-col items-center">
-                <img src="images/convert-icon.png" alt="TEXT" class="w-12 h-12 mb-2">
-                <p class="text-lg">2. Click the <strong>TEXT</strong> button to start the conversion.</p>
+            <div class="step-card hover:transform hover:scale-105 transition-all duration-500 bg-gray-800 p-8 rounded-xl shadow-lg">
+                <div class="icon-wrapper mb-6 transform hover:rotate-12 transition-transform duration-300">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-green-500 rounded-full opacity-20 animate-pulse"></div>
+                        <img src="images/convert-icon.png" alt="TEXT" class="w-16 h-16 relative z-10">
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-green-400">Step 2</h3>
+                <p class="text-gray-300">Click the <strong class="text-green-400">TEXT</strong> button to start the conversion.</p>
             </div>
+
             <!-- Step 3 -->
-            <div class="flex flex-col items-center">
-                <img src="images/download-icon.png" alt="Download TEXT" class="w-12 h-12 mb-2">
-                <p class="text-lg">3. Once the status shows "Done," click the <strong>Download TEXT</strong> button to save the file.</p>
+            <div class="step-card hover:transform hover:scale-105 transition-all duration-500 bg-gray-800 p-8 rounded-xl shadow-lg">
+                <div class="icon-wrapper mb-6 transform hover:rotate-12 transition-transform duration-300">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-purple-500 rounded-full opacity-20 animate-pulse"></div>
+                        <img src="images/download-icon.png" alt="Download TEXT" class="w-16 h-16 relative z-10">
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-purple-400">Step 3</h3>
+                <p class="text-gray-300">Click the <strong class="text-purple-400">Download TEXT</strong> button to save your file.</p>
             </div>
         </div>
     </div>
 </section>
+
 <!-- Features Section -->
 <section id="features" class="py-20 bg-gray-900 text-white">
     <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8">Features</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 animate-fade-in">Features</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Feature 1 -->
-            <div class="flex flex-col items-center">
-                <img src="images/easy-to-use-icon.png" alt="Easy to Use" class="w-12 h-12 mb-2">
-                <p class="text-lg"><strong>Easy to Use</strong>: Allows quick and straightforward file conversion.</p>
+            <div class="feature-card p-6 bg-gray-800 rounded-xl transform hover:scale-105 transition-all duration-500">
+                <div class="icon-container mb-6">
+                    <div class="icon-wrapper relative">
+                        <div class="absolute inset-0 bg-blue-500 rounded-full opacity-20 animate-pulse"></div>
+                        <img src="images/easy-to-use-icon.png" alt="Easy to Use" 
+                             class="w-16 h-16 relative z-10 feature-icon transform transition-transform duration-500">
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-blue-400">Easy to Use</h3>
+                <p class="text-gray-400">Quick and straightforward file conversion with intuitive interface.</p>
             </div>
+
             <!-- Feature 2 -->
-            <div class="flex flex-col items-center">
-                <img src="images/best-quality-icon.png" alt="Best Quality" class="w-12 h-12 mb-2">
-                <p class="text-lg"><strong>Best Quality</strong>: Ensures high-quality conversions.</p>
+            <div class="feature-card p-6 bg-gray-800 rounded-xl transform hover:scale-105 transition-all duration-500">
+                <div class="icon-container mb-6">
+                    <div class="icon-wrapper relative">
+                        <div class="absolute inset-0 bg-green-500 rounded-full opacity-20 animate-pulse"></div>
+                        <img src="images/best-quality-icon.png" alt="Best Quality" 
+                             class="w-16 h-16 relative z-10 feature-icon transform transition-transform duration-500">
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-green-400">Best Quality</h3>
+                <p class="text-gray-400">High-fidelity conversion maintaining document integrity.</p>
             </div>
+
             <!-- Feature 3 -->
-            <div class="flex flex-col items-center">
-                <img src="images/free-secure-icon.png" alt="Free & Secure" class="w-12 h-12 mb-2">
-                <p class="text-lg"><strong>Free & Secure</strong>: Free to use with guaranteed file security.</p>
+            <div class="feature-card p-6 bg-gray-800 rounded-xl transform hover:scale-105 transition-all duration-500">
+                <div class="icon-container mb-6">
+                    <div class="icon-wrapper relative">
+                        <div class="absolute inset-0 bg-purple-500 rounded-full opacity-20 animate-pulse"></div>
+                        <img src="images/free-secure-icon.png" alt="Free & Secure" 
+                             class="w-16 h-16 relative z-10 feature-icon transform transition-transform duration-500">
+                    </div>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-purple-400">Free & Secure</h3>
+                <p class="text-gray-400">Guaranteed file security with free conversion service.</p>
             </div>
         </div>
     </div>
 </section>
 <!-- Additional Conversion Options Section -->
 <section id="additional-options" class="py-20 bg-gray-900 text-white">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8">Additional Conversion Options</h2>
-        <div class="space-y-6">
-            <p class="text-lg"><strong>Convert Other Files to TEXT</strong>: Supports converting other formats like DOC, DOCX, JPEG, PNG, WebP, RTF, etc., to TEXT.</p>
-            <p class="text-lg"><strong>Convert PDF to Other Formats</strong>: Allows converting PDF to formats such as DOCX, EPUB, HTML, PNG, JPG, Excel, PowerPoint, and more.</p>
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Additional Conversion Options</h2>
+        
+        <!-- Grid Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- PDF to Other Formats -->
+            <div class="bg-gray-800 p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                <h3 class="text-2xl font-semibold mb-6 text-blue-400">Convert PDF to Other Formats</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <!-- Format Icons -->
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/docx.png" alt="DOCX" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">DOCX</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/xlsx.png" alt="XLSX" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">XLSX</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/pptx.png" alt="PPTX" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">PPTX</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/jpg.png" alt="JPG" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">JPG</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/png.png" alt="PNG" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">PNG</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/svg.png" alt="SVG" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">SVG</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Formats to PDF -->
+            <div class="bg-gray-800 p-8 rounded-xl hover:transform hover:scale-105 transition-all duration-300">
+                <h3 class="text-2xl font-semibold mb-6 text-green-400">Convert Other Formats to PDF</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <!-- Format Icons -->
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/doc.png" alt="DOC" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">DOC</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/txt.png" alt="TXT" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">TXT</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/rtf.png" alt="RTF" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">RTF</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/html.png" alt="HTML" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">HTML</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/epub.png" alt="EPUB" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">EPUB</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors">
+                        <img src="images/formats/csv.png" alt="CSV" class="w-12 h-12 mb-2">
+                        <span class="text-sm font-medium">CSV</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-<!-- FAQs Section -->
+
+<!-- Update the FAQ Section in index.html -->
 <section id="faqs" class="py-20 bg-gray-900 text-white">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8">Frequently Asked Questions</h2>
-        <div class="space-y-6">
-            <!-- FAQ 1 -->
-            <div class="faq-item bg-gray-800 p-6 rounded-lg shadow-lg cursor-pointer" onclick="toggleAnswer(this)">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-semibold">How secure is my file?</h3>
-                    <span class="arrow text-xl">▼</span>
+    <div class="container mx-auto px-4">
+        <!-- Animated Title -->
+        <h2 class="text-4xl font-bold text-center mb-12 relative animate-fade-in">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                Frequently Asked Questions
+            </span>
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></div>
+        </h2>
+
+        <div class="max-w-3xl mx-auto space-y-6">
+            <!-- FAQ Items -->
+            <div class="faq-item bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-700/50">
+                <div class="faq-header p-6 flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-lg font-semibold text-blue-400">How secure is my file?</h3>
+                    <span class="faq-icon transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
                 </div>
-                <p class="faq-answer text-gray-400 hidden">
-                    Your files are completely secure. We use advanced encryption to protect your data during upload and conversion. Files are automatically deleted from our servers after processing.
-                </p>
+                <div class="faq-content overflow-hidden max-h-0 transition-all duration-500">
+                    <div class="p-6 pt-0 text-gray-400">
+                        Your files are completely secure. We use advanced encryption to protect your data during upload and conversion. Files are automatically deleted from our servers after processing.
+                    </div>
+                </div>
             </div>
-            <!-- FAQ 2 -->
-            <div class="faq-item bg-gray-800 p-6 rounded-lg shadow-lg cursor-pointer" onclick="toggleAnswer(this)">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-semibold">What file formats do you support?</h3>
-                    <span class="arrow text-xl">▼</span>
+
+            <!-- New FAQ Items -->
+            <!-- Question 2 -->
+            <div class="faq-item bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-700/50">
+                <div class="faq-header p-6 flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-lg font-semibold text-blue-400">Is this service free to use?</h3>
+                    <span class="faq-icon transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
                 </div>
-                <p class="faq-answer text-gray-400 hidden">
-                    We support a wide range of file formats, including PDF, DOC, DOCX, JPEG, PNG, WebP, RTF, and more for conversion to TEXT. Additionally, you can convert PDFs to formats like DOCX, EPUB, HTML, PNG, JPG, Excel, PowerPoint, etc.
-                </p>
+                <div class="faq-content overflow-hidden max-h-0 transition-all duration-500">
+                    <div class="p-6 pt-0 text-gray-400">
+                        Yes, our basic conversion service is completely free. We also offer premium features for advanced users with additional requirements.
+                    </div>
+                </div>
             </div>
-            <!-- FAQ 3 -->
-            <div class="faq-item bg-gray-800 p-6 rounded-lg shadow-lg cursor-pointer" onclick="toggleAnswer(this)">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-semibold">Is there a file size limit?</h3>
-                    <span class="arrow text-xl">▼</span>
+
+            <!-- Question 3 -->
+            <div class="faq-item bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-700/50">
+                <div class="faq-header p-6 flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-lg font-semibold text-blue-400">What's the maximum file size limit?</h3>
+                    <span class="faq-icon transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
                 </div>
-                <p class="faq-answer text-gray-400 hidden">
-                    Yes, the maximum file size for free users is 1GB. If you need to upload larger files, consider signing up for a premium account.
-                </p>
+                <div class="faq-content overflow-hidden max-h-0 transition-all duration-500">
+                    <div class="p-6 pt-0 text-gray-400">
+                        For free users, the maximum file size is 100MB. Premium users can convert files up to 500MB.
+                    </div>
+                </div>
             </div>
-            <!-- FAQ 4 -->
-            <div class="faq-item bg-gray-800 p-6 rounded-lg shadow-lg cursor-pointer" onclick="toggleAnswer(this)">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-lg font-semibold">Do you store my files after conversion?</h3>
-                    <span class="arrow text-xl">▼</span>
+
+            <!-- Question 4 -->
+            <div class="faq-item bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-700/50">
+                <div class="faq-header p-6 flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-lg font-semibold text-blue-400">How long does conversion take?</h3>
+                    <span class="faq-icon transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
                 </div>
-                <p class="faq-answer text-gray-400 hidden">
-                    No, we do not store your files after conversion. All files are automatically deleted from our servers within 24 hours to ensure your privacy.
-                </p>
+                <div class="faq-content overflow-hidden max-h-0 transition-all duration-500">
+                    <div class="p-6 pt-0 text-gray-400">
+                        Most conversions are completed within seconds. Larger files may take a few minutes depending on the file size and conversion type.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="faq-item bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-700/50">
+                <div class="faq-header p-6 flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-lg font-semibold text-blue-400">Which formats are supported?</h3>
+                    <span class="faq-icon transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="faq-content overflow-hidden max-h-0 transition-all duration-500">
+                    <div class="p-6 pt-0 text-gray-400">
+                        We support a wide range of formats including DOCX, XLSX, PPTX, JPG, PNG, SVG, TXT, and more. Check our format selector for the complete list.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="faq-item bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl border border-gray-700/50">
+                <div class="faq-header p-6 flex justify-between items-center cursor-pointer" onclick="toggleFaq(this)">
+                    <h3 class="text-lg font-semibold text-blue-400">Can I convert multiple files at once?</h3>
+                    <span class="faq-icon transition-transform duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="faq-content overflow-hidden max-h-0 transition-all duration-500">
+                    <div class="p-6 pt-0 text-gray-400">
+                        Yes, premium users can convert multiple files simultaneously. Free users can convert one file at a time.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -435,8 +667,6 @@
         </div>
     </div>
 </footer>
-<!-- Add before closing body tag -->
-<script src="js/google-drive.js"></script>
 </body>
 
 </html>
