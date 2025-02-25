@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# SwiftPDF.github.io
-=======
+ 
 # SwiftPDF Converter
 
 ## Setup
@@ -14,4 +12,4 @@ CONVERT_API_KEY=secret_nGwFt2XLz4qDooU3
 
 ## Environment Variables
 - `CONVERT_API_KEY`: Your ConvertAPI authentication key
->>>>>>> 4971f68 (Initial commit)
+ 
