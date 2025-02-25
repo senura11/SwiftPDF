@@ -111,9 +111,7 @@ convertButton.addEventListener('click', async () => {
         convertButton.disabled = true;
         convertButton.innerHTML = 'Converting...';
 
-    
-        // Update the fetch URL
-        const response = await fetch(`https://v2.convertapi.com/convert/pdf/to/${selectedFormat}?auth=${config.API_KEY}&download=attachment`, {
+        const response = await fetch(`https://v2.convertapi.com/convert/pdf/to/${selectedFormat}?auth=secret_nGwFt2XLz4qDooU3&download=attachment`, {
             method: 'POST',
             body: formData,
         });
@@ -287,3 +285,4 @@ function toggleAnswer(element) {
     }
 }
 
+>>>>>>> 4971f68 (Initial commit)
