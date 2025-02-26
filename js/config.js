@@ -1,1 +1,1 @@
-export const API_KEY = "secret_nGwFt2XLz4qDooU3";
+const API_KEY = process.env.CONVERT_API_KEY || 'your_fallback_key';

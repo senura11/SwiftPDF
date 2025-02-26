@@ -1,8 +1,15 @@
-# Ignore config file with API key
+# Config files
+.env
 js/config.js
 
-# Other files to ignore
+# Build files
+dist/
+build/
+
+# Dependencies
 node_modules/
+
+# Other files to ignore
 .DS_Store
 *.log
 
