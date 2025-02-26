@@ -1,3 +1,5 @@
+import { API_KEY } from "./config.js";
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Elements
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -169,6 +171,8 @@ function showConversionSection(file) {
     convertButton.disabled = false;
 }
 
+ 
+
 
 
 // Conversion handler
@@ -192,7 +196,7 @@ convertButton.addEventListener('click', async () => {
         convertButton.disabled = true;
         convertButton.innerHTML = 'Converting...';
 
-        const response = await fetch(`https://v2.convertapi.com/convert/pdf/to/${selectedFormat}?auth=${config.API_KEY}&download=attachment`, {
+        const response = await fetch(`https://v2.convertapi.com/convert/pdf/to/${selectedFormat}?auth=${API_KEY}&download=attachment`, {
             method: 'POST',
             body: formData,
         });
