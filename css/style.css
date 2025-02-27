@@ -341,6 +341,55 @@ body.light #error-message-text {
     color: rgb(185, 28, 28);
 }
 
+/*choose file styles*/
+
+/* Button Animation Styles */
+@keyframes shine {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 200%;
+    }
+}
+
+.group:hover .animate-shine {
+    animation: shine 1.5s ease-in-out infinite;
+}
+
+#choose-files {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+#choose-files:active {
+    transform: scale(0.95);
+}
+
+#choose-files::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, 
+                              rgba(59, 130, 246, 0.5), 
+                              transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#choose-files:hover::before {
+    opacity: 1;
+}
+
+/* Light Theme Adjustments */
+body.light #choose-files {
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1), 
+                0 2px 4px -1px rgba(59, 130, 246, 0.06);
+}
+
+
+
 
 /* Hero Section */
 /* ----------------------------- */
@@ -1180,51 +1229,4 @@ body.light #about .bg-gray-700 {
 body.light #about .bg-gray-700:hover {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
-
-/* Button Animation Styles */
-@keyframes shine {
-    from {
-        left: -100%;
-    }
-    to {
-        left: 200%;
-    }
-}
-
-.group:hover .animate-shine {
-    animation: shine 1.5s ease-in-out infinite;
-}
-
-#choose-files {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
-                0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-}
-
-#choose-files:active {
-    transform: scale(0.95);
-}
-
-#choose-files::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, 
-                              rgba(59, 130, 246, 0.5), 
-                              transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-#choose-files:hover::before {
-    opacity: 1;
-}
-
-/* Light Theme Adjustments */
-body.light #choose-files {
-    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1), 
-                0 2px 4px -1px rgba(59, 130, 246, 0.06);
-}
-
-
 

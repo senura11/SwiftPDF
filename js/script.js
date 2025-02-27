@@ -1,4 +1,4 @@
-import { API_KEY } from "./config.js";
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Elements
@@ -196,7 +196,7 @@ convertButton.addEventListener('click', async () => {
         convertButton.disabled = true;
         convertButton.innerHTML = 'Converting...';
 
-        const response = await fetch(`https://v2.convertapi.com/convert/pdf/to/${selectedFormat}?auth=${API_KEY}&download=attachment`, {
+        const response = await fetch(`https://v2.convertapi.com/convert/pdf/to/${selectedFormat}?auth=secret_nGwFt2XLz4qDooU3&download=attachment`, {
             method: 'POST',
             body: formData,
         });
