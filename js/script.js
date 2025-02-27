@@ -196,11 +196,12 @@ convertButton.addEventListener('click', async () => {
         convertButton.disabled = true;
         convertButton.innerHTML = 'Converting...';
 
-        const response = await fetch(`https://v2.convertapi.com/convert/pdf/to/${selectedFormat}?auth=secret_nGwFt2XLz4qDooU3&download=attachment`, {
+        // Netlify function එකට ඉල්ලීම යොමු කිරීම
+        const response = await fetch(`/.netlify/functions/convert/${selectedFormat}`, {
             method: 'POST',
             body: formData,
         });
-
+        
         if (!response.ok) {
             throw new Error(`Conversion failed: ${response.statusText}`);
         }

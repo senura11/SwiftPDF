@@ -1,1 +1,0 @@
-const API_KEY = process.env.CONVERT_API_KEY || 'your_fallback_key';
