@@ -1,17 +1,17 @@
-<<<<<<< HEAD
-# SwiftPDF.github.io
-=======
 # SwiftPDF Converter
 
 ## Setup
 1. Clone the repository
-2. Create a `.env` file in the root directory
-3. Add your ConvertAPI key:
+2. Create `js/config.js` with your API key:
+```javascript
+const config = {
+    API_KEY: 'your_api_key_here'
+};
 ```
-CONVERT_API_KEY=secret_nGwFt2XLz4qDooU3
 
-```
+## Configuration
+The `config.js` file contains sensitive information and is not included in the repository. You must create this file locally with your own API key.
 
 ## Environment Variables
 - `CONVERT_API_KEY`: Your ConvertAPI authentication key
->>>>>>> 4971f68 (Initial commit)
+

@@ -1,4 +1,3 @@
-
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -173,72 +172,227 @@ body.light #error-message {
     color: #EF4444;
 }
 
-/* Format Selector Styles */
-#format-selector {
+/* Add to style.css */
+/* Enhanced Dropdown Styles */
+.format-selector {
     cursor: pointer;
-    background-image: none;
+    position: relative;
     transition: all 0.3s ease;
+    background: linear-gradient(145deg, #2d3748, #1a202c);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-#format-selector optgroup {
-    font-weight: 600;
-    color: #60A5FA;
-    padding: 12px;
-    background-color: #1F2937;
+/* Option Group Styles */
+.format-group {
+    padding: 0.75rem;
+    background: linear-gradient(to right, #1a202c, #2d3748);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#format-selector option {
-    background-color: #374151;
-    color: white;
-    padding: 12px;
-    font-size: 0.95rem;
-    transition: background-color 0.2s ease;
+/* Individual Option Styles */
+.format-option {
+    position: relative;
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    transition: all 0.3s ease;
+    background: transparent;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-#format-selector option:hover {
-    background-color: #4B5563;
+/* Option Hover Effects */
+.format-option:hover {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    transform: translateX(10px);
+    padding-left: 1.5rem;
+}
+
+/* Dropdown Arrow Animation */
+.format-selector:focus + .absolute svg {
+    transform: rotate(180deg);
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Apply Animations */
+.format-selector option {
+    animation: slideDown 0.3s ease forwards;
+}
+
+.format-group {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Hover Glow Effect */
+.format-selector:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
 }
 
 /* Light Theme Adjustments */
-body.light #format-selector {
-    background-color: #f3f4f6;
+body.light .format-selector {
+    background: linear-gradient(145deg, #f7fafc, #edf2f7);
+    color: #2d3748;
+}
+
+body.light .format-group {
+    background: linear-gradient(to right, #f7fafc, #edf2f7);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light .format-option:hover {
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+    color: white;
+}
+
+
+/* remove file */
+#remove-file {
+    border-radius: 50%;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+#remove-file:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    transform: scale(1.1);
+}
+
+body.light #remove-file {
+    color: #EF4444;
+}
+
+body.light #remove-file:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+
+/* upload file details*/
+#uploaded-file-details {
+    transition: all 0.3s ease;
+}
+
+#uploaded-file-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#file-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Fancy file size formatting */
+#file-size {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Light theme adjustments */
+body.light #uploaded-file-details {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+body.light #uploaded-file-details .bg-gray-600 {
+    background-color: #f1f5f9;
+}
+
+body.light #file-name {
     color: #1f2937;
-    border-color: #e5e7eb;
 }
 
-body.light #format-selector optgroup {
-    color: #2563EB;
-    background-color: #F3F4F6;
+body.light #remove-file:hover {
+    background-color: #f1f5f9;
 }
 
-body.light #format-selector option {
-    background-color: #ffffff;
-    color: #1f2937;
+/* error message */
+#error-container {
+    opacity: 0;
+    transform: translateY(-10px);
 }
 
-/* Option group spacing */
-#format-selector optgroup + optgroup {
-    margin-top: 8px;
+#error-container:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Format option styles */
-.format-option {
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
+/* Light theme adjustments */
+body.light #error-container {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
 }
 
-/* Hover effects */
-#format-selector:hover {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.1);
+body.light #error-message-text {
+    color: rgb(185, 28, 28);
 }
 
-#format-selector:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
-    outline: none;
+/*choose file styles*/
+
+/* Button Animation Styles */
+@keyframes shine {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 200%;
+    }
 }
+
+.group:hover .animate-shine {
+    animation: shine 1.5s ease-in-out infinite;
+}
+
+#choose-files {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+#choose-files:active {
+    transform: scale(0.95);
+}
+
+#choose-files::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, 
+                              rgba(59, 130, 246, 0.5), 
+                              transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#choose-files:hover::before {
+    opacity: 1;
+}
+
+/* Light Theme Adjustments */
+body.light #choose-files {
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1), 
+                0 2px 4px -1px rgba(59, 130, 246, 0.06);
+}
+
+
+
+
+
+
 /* Hero Section */
 /* ----------------------------- */
 
@@ -502,6 +656,8 @@ body.light #progress-text {
 
 
 
+
+
 /* ----------------------------- */
 /* How to Convert Section */
 /* ----------------------------- */
@@ -531,6 +687,84 @@ body.light #how-to-convert h2 {
 
 body.light #how-to-convert p {
     color: #111827;
+}
+
+/* How to Convert Section Animations */
+.step-card {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+}
+
+.step-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.icon-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3B82F6, #10B981, #8B5CF6);
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.step-card:hover .icon-wrapper::after {
+    opacity: 0.5;
+}
+
+.icon-wrapper img {
+    transition: transform 0.5s ease;
+}
+
+.step-card:hover .icon-wrapper img {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Animate cards on scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.step-card:nth-child(1) { animation-delay: 0.2s; }
+.step-card:nth-child(2) { animation-delay: 0.4s; }
+.step-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Light theme adjustments */
+body.light .step-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light .step-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -563,6 +797,98 @@ body.light #features h2 {
 
 body.light #features p {
     color: #718096;
+}
+
+/* Feature Cards Animation */
+.feature-card {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+}
+
+.feature-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+}
+
+/* Icon Container Styles */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+/* Icon Glow Effect */
+.icon-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3B82F6, #10B981, #8B5CF6);
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover .icon-wrapper::after {
+    opacity: 0.5;
+}
+
+/* Icon Animation */
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Staggered Animation for Cards */
+.feature-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.2s; }
+.feature-card:nth-child(2) { animation-delay: 0.4s; }
+.feature-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Light Theme Adjustments */
+body.light .feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light .feature-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+body.light .icon-wrapper {
+    background: rgba(0, 0, 0, 0.05);
 }
 
 
@@ -630,81 +956,110 @@ body.light #faqs .bg-gray-800 {
     background-color: #EDF2F7;
 }
 
+/* FAQ Section Animations */
+.faq-item {
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(145deg, rgba(31, 41, 55, 0.4), rgba(17, 24, 39, 0.8));
+}
+
+.faq-header {
+    position: relative;
+    z-index: 1;
+}
+
+.faq-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.faq-item:hover .faq-header::before {
+    transform: translateX(100%);
+}
+
+.faq-icon {
+    color: #60A5FA;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-content {
+    background: rgba(17, 24, 39, 0.3);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Light Theme Adjustments */
+body.light .faq-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light .faq-content {
+    background: rgba(255, 255, 255, 0.05);
+}
+
 /* ----------------------------- */
 /* Additional Conversion Options Section */
 /* ----------------------------- */
 
+/* Add to style.css */
 #additional-options {
-    background-color: #111827; /* Dark Mode Background */
-    padding: 3rem 0;
+    background: linear-gradient(to bottom, #111827, #1F2937);
 }
 
-#additional-options h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #ffffff; /* White Text for Dark Mode */
-    text-align: center;
+#additional-options .bg-gray-800 {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
-#additional-options p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #A0AEC0; /* Light Gray Text for Dark Mode */
-    text-align: center;
-    margin-bottom: 2rem;
+#additional-options .bg-gray-700 {
+    transition: all 0.3s ease;
 }
 
-#additional-options img {
-    width: 3rem;
-    height: 3rem;
-    margin: 0 auto 1rem;
-    display: block;
+#additional-options .bg-gray-700:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Light Mode Adjustments */
+/* Light Theme Adjustments */
 body.light #additional-options {
-    background-color: #F7FAFC; /* Light Blue-Grey Background */
+    background: linear-gradient(to bottom, #F3F4F6, #E5E7EB);
 }
 
-body.light #additional-options h2 {
-    color: #111827; /* Dark Text for Light Mode */
+body.light #additional-options .bg-gray-800 {
+    background-color: white;
+    border: 1px solid #E5E7EB;
 }
 
-body.light #additional-options p {
-    color: #4A5568; /* Medium Gray Text for Light Mode */
+body.light #additional-options .bg-gray-700 {
+    background-color: #F3F4F6;
 }
 
-/* Button Styling for Additional Options */
-#additional-options .btn-secondary {
-    background-color: #4299E1; /* Blue Button */
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px; /* Rounded Full */
-    font-weight: 600;
-    transition: background-color 0.3s ease-in-out;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 1rem;
+body.light #additional-options .text-white {
+    color: #1F2937;
 }
 
-#additional-options .btn-secondary:hover {
-    background-color: #3182CE; /* Darker Blue on Hover */
+body.light #additional-options .text-blue-400 {
+    color: #3B82F6;
 }
 
-/* Responsive Layout */
-@media (min-width: 768px) {
-    #additional-options {
-        padding: 4rem 0;
-    }
-
-    #additional-options h2 {
-        font-size: 2.5rem;
-    }
-
-    #additional-options p {
-        font-size: 1.25rem;
-    }
+body.light #additional-options .text-green-400 {
+    color: #10B981;
 }
+
+
 
 /* ----------------------------- */
 /* Footer Section */
